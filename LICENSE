@@ -1,0 +1,30 @@
+Copyright (c) 2026 Felix Burkhardt. All rights reserved.
+
+This repository is shared for research and demonstration purposes only.
+
+## Code and documentation
+
+The scripts, configuration files, and documentation (README.md and this LICENSE) in
+this repository may be viewed, copied, and adapted for non-commercial research and
+demonstration purposes, provided this notice is retained.
+
+## Audio samples (samples/)
+
+The audio files under `samples/` are synthetic speech, generated via zero-shot,
+audio-conditioned voice cloning of prosody from StressDat (Rajčáni et al., Slovak
+Academy of Sciences) — a corpus licensed for research use only. Because voice cloning
+can reproduce the vocal characteristics of a real, identifiable speaker even when the
+words are new, these samples may resemble the voice of a real individual who has not
+consented to any use of their cloned voice beyond StressDat's own original research
+license.
+
+**The audio samples under `samples/` may NOT be used, copied, redistributed,
+incorporated into any dataset or model (including as machine learning training data),
+or otherwise reused for any purpose — research, commercial, or personal — without the
+express prior written consent of the copyright holder.**
+
+This restriction applies to the audio files specifically; it does not apply to the
+result plots under `results/` (which contain no speech or voice content, only
+aggregate statistics), or to the code and documentation described above.
+
+To request permission for the audio samples, contact Felix Burkhardt.
