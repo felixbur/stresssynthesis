@@ -65,17 +65,24 @@ to any synthetic or cross-lingual audio — was scored against all synthetic cli
 
 | Metric | Value |
 |---|---|
-| Pearson correlation (PCC) | 0.812 |
-| Concordance correlation (CCC) | 0.761 |
-| High/low classification accuracy (UAR) | 0.816 |
+| Pearson correlation (PCC) | 0.811 |
+| Concordance correlation (CCC) | 0.776 |
+| High/low classification accuracy (UAR) | 0.812 |
 
 For reference, that same model's performance on real, native-language recordings (the
 data it was actually trained on) is CCC ≈ 0.90 — so cross-lingual, voice-cloned
 synthetic speech recovers most, though not all, of native-domain performance.
 
-![Predicted vs. true stress on the synthetic clips — scatter plot with regression line, CCC 0.761, PCC 0.812](results/style_transfer_scatter.png)
+Broken out by language, German scores essentially the same as English (PCC 0.814 / CCC
+0.791 / UAR 0.808 for German vs. PCC 0.812 / CCC 0.761 / UAR 0.816 for English) — evidence
+the cloned prosody carries the stress signal about equally well regardless of the output
+language:
 
-![High/low stress confusion matrix on the synthetic clips, UAR 0.816](results/style_transfer_confusion.png)
+![Bar chart comparing PCC, CCC, and UAR for English-only, German-only, and combined evaluation — all three scores are close across the three groups](results/language_comparison_barplot.png)
+
+![Predicted vs. true stress on the synthetic clips — scatter plot with regression line, CCC 0.776, PCC 0.811](results/style_transfer_scatter.png)
+
+![High/low stress confusion matrix on the synthetic clips, UAR 0.812](results/style_transfer_confusion.png)
 
 Per-bin, predictions track the copied label monotonically across the full stress range,
 with the largest gap at the highest stress level (the model somewhat under-predicts the
@@ -105,8 +112,6 @@ stressed.
 - **Copied stress labels** are a proxy (StressDat's own perceptual stress score for the
   reference recording), not a new human rating of the synthetic clip itself — see
   Results above for how well that proxy holds up against an independent model.
-- Downstream framework used: [nkululeko](https://github.com/felixbur/nkululeko) for
-  model training/evaluation.
 
 **The audio samples under `samples/` require the copyright holder's express prior
 written consent before any use** — including research, commercial, or personal use,
